@@ -10,13 +10,13 @@
 </head>
 <body>
     <div class="container-fluid text-center" id="gameBoard">
-        <div class="row">
+        <div class="row" id="newgameBoard">
             <div class="col">
                 <button>NEW GAME</button>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
+        <div class="row" id="playersBoard">
+            <div class="col" id="player1">
                 <h1>PLAYER 1</h1>
                 <p>0</p>
                 <button>
@@ -24,12 +24,12 @@
                     <p>0</p>
                 </button>
             </div>
-            <div class="col-3">
+            <div class="col-3" id="buttonBoard">
                 <canvas></canvas>
                 <div><button>ROLL DICE</button></div>
                 <div><button>HOLD</button></div>
             </div>
-            <div class="col">
+            <div class="col" id="player2">
                 <h1>PLAYER 2</h1>
                 <p>0</p>
                 <button>

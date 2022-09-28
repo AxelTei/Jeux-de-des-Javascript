@@ -10,6 +10,11 @@ body {
     padding: 0.5rem calc((100vw - 1200px) / 2);
     background: linear-gradient(to right, rgba(0,0,0,0.4), 
      rgba(0,0,0,0.1)), url('./images/book-g1ce98b46b_1920.png') no-repeat center;
-     height: 100vw;
-     background-size: cover;
+    height: 100vw;
+    background-size: cover;
+    background-position: center;
+}
+
+#newgameBoard {
+    padding: 48px;
 }
