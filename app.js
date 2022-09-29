@@ -12,36 +12,16 @@ let currentPoints = document.querySelector('#currentScore')
 let currentPoints2 = document.querySelector('#currentScore2')
 let diceResult;
 
+function startGame() 
+{
+
+}
+
 class DiceGame 
 {
-    constructor(player, dice) {
+    constructor(player, dice, round) {
         this.player = player;
         this.dice = dice;
-    }
-
-
-}
-
-/*
-const rollTheDice = () => 
-{
-    let diceResult = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-    return diceResult;
-};
-
-if(diceResult === 1) {
-    
-}
-
-if(globalPoints >= 100 || globalPoints2 >= 100) {
-    if (globalPoints >= 100) {
-        alert('PLAYER1 WIN!')
-    } else {
-        alert('PLAYER2 WIN!')
+        this.round = round;
     }
 }
-
-rollDice.addEventListener('click', rollTheDice);
-//holdScore.addEventListener('click',)
-//newGame.addEventListener('click',)
-*/
