@@ -10,19 +10,38 @@ let globalPoints = document.querySelector('#globalPts')
 let globalPoints2 = document.querySelector('#globalPts2')
 let currentPoints = document.querySelector('#currentScore')
 let currentPoints2 = document.querySelector('#currentScore2')
+let diceResult;
 
+class DiceGame 
+{
+    constructor(player, dice) {
+        this.player = player;
+        this.dice = dice;
+    }
+
+
+}
+
+/*
 const rollTheDice = () => 
 {
     let diceResult = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
     return diceResult;
-}
+};
 
 if(diceResult === 1) {
     
-} else {
+}
 
+if(globalPoints >= 100 || globalPoints2 >= 100) {
+    if (globalPoints >= 100) {
+        alert('PLAYER1 WIN!')
+    } else {
+        alert('PLAYER2 WIN!')
+    }
 }
 
 rollDice.addEventListener('click', rollTheDice);
-holdScore.addEventListener('click',)
-newGame.addEventListener('click',)
+//holdScore.addEventListener('click',)
+//newGame.addEventListener('click',)
+*/
