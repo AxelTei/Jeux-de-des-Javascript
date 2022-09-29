@@ -21,6 +21,13 @@ body {
     }
 }
 
+@media screen and (max-width: 768px) {
+    #canvasElement {
+        width: 200px;
+        height: 200px;
+    }
+}
+
 #newgameBoard {
     padding: 48px;
 }
