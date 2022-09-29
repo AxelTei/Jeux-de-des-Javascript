@@ -12,9 +12,14 @@ let currentPoints = document.querySelector('#currentScore')
 let currentPoints2 = document.querySelector('#currentScore2')
 let diceResult;
 
+startGame();
+
 function startGame() 
 {
-
+    globalPoints.textContent = '0';
+    globalPoints2.textContent = '0';
+    currentPoints.textContent = '0';
+    currentPoints2.textContent = '0';
 }
 
 class DiceGame 
