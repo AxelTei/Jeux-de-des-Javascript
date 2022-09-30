@@ -53,7 +53,13 @@ const changeTheRound = () =>
 
 const keepTheScore = () => 
 {
-    globalPoints[activePlayer]
+    let newGlobal;
+    newGlobal[actualPlayer] += actualScore;
+
+    let global = document.getElementById(`globalPts${actualPlayer}`);
+    global.textContent = newGlobal[actualPlayer];
+
+
 }
 
 rollButton.addEventListener('click', rollTheDice);
