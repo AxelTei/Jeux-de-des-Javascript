@@ -1,6 +1,8 @@
 
 let actualScore;
 let actualPlayer;
+let newGlobal1;
+let newGlobal2;
 let globalPoints1 = document.querySelector('#globalPts1');
 let globalPoints2 = document.querySelector('#globalPts2');
 let currentPoints1 = document.querySelector('#currentScore1');
@@ -42,6 +44,7 @@ const changeTheRound = () =>
 {
     if (actualPlayer === 1) {
         actualPlayer = 2
+        actualScore = 0
     } else {
         actualPlayer = 1
         actualScore = 0
@@ -53,15 +56,26 @@ const changeTheRound = () =>
 
 const keepTheScore = () => 
 {
-    let newGlobal;
-    newGlobal[actualPlayer] += actualScore;
+    if(actualPlayer === 1) {
+        newGlobal1 += actualScore;
+        let global = document.getElementById(`globalPts${actualPlayer}`);
+        global.textContent += newGlobal1;
+    } else {
+        newGlobal2 += actualScore;
+        let global = document.getElementById(`globalPts${actualPlayer}`);
+        global.textContent += newGlobal2;
+    }
 
-    let global = document.getElementById(`globalPts${actualPlayer}`);
-    global.textContent = newGlobal[actualPlayer];
+    //let global = document.getElementById(`globalPts${actualPlayer}`);
+    //global.textContent = newGlobal[actualPlayer];
 
-
+    if(global >= 100) {
+        alert(`PLAYER${actualPlayer} WINS!`)
+    } else {
+        changeTheRound();
+    }
 }
 
 rollButton.addEventListener('click', rollTheDice);
-holdButton.addEventListener('click', changeTheRound);
-newGameButton.addEventListener('click', startGame)
+holdButton.addEventListener('click', keepTheScore);
+newGameButton.addEventListener('click', startGame);
