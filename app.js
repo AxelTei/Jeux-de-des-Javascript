@@ -1,8 +1,7 @@
 
 let actualScore;
 let actualPlayer;
-let newGlobal1;
-let newGlobal2;
+let newScores = [0, 0];
 let globalPoints1 = document.querySelector('#globalPts1');
 let globalPoints2 = document.querySelector('#globalPts2');
 let currentPoints1 = document.querySelector('#currentScore1');
@@ -16,10 +15,12 @@ const startGame = () =>
 {
     actualScore = 0;
     actualPlayer = 1;
+    newScores = [0, 0];
     globalPoints1.textContent = '0';
     globalPoints2.textContent = '0';
     currentPoints1.textContent = '0';
     currentPoints2.textContent = '0';
+    gameIsActive = true;
 }
 
 startGame();
@@ -30,8 +31,7 @@ const rollTheDice = () =>
 
     let diceStyleAnimation;
 
-    if (diceResult !== 1) 
-    {
+    if (diceResult !== 1) {
         actualScore += diceResult;
         let current = document.getElementById(`currentScore${actualPlayer}`);
         current.textContent = actualScore;
@@ -56,25 +56,21 @@ const changeTheRound = () =>
 
 const keepTheScore = () => 
 {
-    if(actualPlayer === 1) {
-        newGlobal1 += actualScore;
-        let global = document.getElementById(`globalPts${actualPlayer}`);
-        global.textContent += newGlobal1;
-    } else {
-        newGlobal2 += actualScore;
-        let global = document.getElementById(`globalPts${actualPlayer}`);
-        global.textContent += newGlobal2;
-    }
-
-    //let global = document.getElementById(`globalPts${actualPlayer}`);
-    //global.textContent = newGlobal[actualPlayer];
-
-    if(global >= 100) {
-        alert(`PLAYER${actualPlayer} WINS!`)
-    } else {
-        changeTheRound();
+    if (gameIsActive === true) 
+    {
+        newScores[actualPlayer - 1] += actualScore
+        let newScore = document.getElementById(`globalPts${actualPlayer}`)
+        newScore.textContent = newScores[actualPlayer - 1];
+        if(newScores[actualPlayer - 1] >= 100) {
+            alert(`PLAYER${actualPlayer} Wins!`)
+            startGame();
+        } else {
+            changeTheRound();
+        }
     }
 }
+
+
 
 rollButton.addEventListener('click', rollTheDice);
 holdButton.addEventListener('click', keepTheScore);
