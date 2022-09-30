@@ -31,6 +31,8 @@ const animate = function()
 {
     diceMesh.rotation.y += 1.5 * Math.PI / 180;
     diceMesh.rotation.x += 1.5 * Math.PI / 180;
+    // Utilise setInterval et setTimeout ensemble pour donner un laps de temps à l'animation apres son call
+    // Display une face de dé concordant au résultat une fois l'animation terminé.
     // Rendu de la scène
     renderer.setClearColor('white');
     renderer.render(scene, camera);
