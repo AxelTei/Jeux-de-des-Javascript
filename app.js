@@ -1,7 +1,7 @@
 
 let actualScore;
-let activePlayer;
-let globalPoints = document.querySelector('#globalPts');
+let actualPlayer;
+let globalPoints1 = document.querySelector('#globalPts1');
 let globalPoints2 = document.querySelector('#globalPts2');
 let currentPoints1 = document.querySelector('#currentScore1');
 let currentPoints2 = document.querySelector('#currentScore2');
@@ -13,8 +13,8 @@ const newGameButton = document.querySelector('#newgameButton');
 const startGame = () => 
 {
     actualScore = 0;
-    activePlayer = 1;
-    globalPoints.textContent = '0';
+    actualPlayer = 1;
+    globalPoints1.textContent = '0';
     globalPoints2.textContent = '0';
     currentPoints1.textContent = '0';
     currentPoints2.textContent = '0';
@@ -31,7 +31,7 @@ const rollTheDice = () =>
     if (diceResult !== 1) 
     {
         actualScore += diceResult;
-        let current = document.getElementById(`currentScore${activePlayer}`);
+        let current = document.getElementById(`currentScore${actualPlayer}`);
         current.textContent = actualScore;
     } else {
         changeTheRound()
@@ -40,15 +40,20 @@ const rollTheDice = () =>
 
 const changeTheRound = () => 
 {
-    if (activePlayer === 1) {
-        activePlayer = 2
+    if (actualPlayer === 1) {
+        actualPlayer = 2
     } else {
-        activePlayer = 1
+        actualPlayer = 1
         actualScore = 0
     }
 
     currentPoints1.textContent = '0';
     currentPoints2.textContent = '0';
+}
+
+const keepTheScore = () => 
+{
+    globalPoints[activePlayer]
 }
 
 rollButton.addEventListener('click', rollTheDice);
