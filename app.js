@@ -6,7 +6,6 @@ let globalPoints1 = document.querySelector('#globalPts1');
 let globalPoints2 = document.querySelector('#globalPts2');
 let currentPoints1 = document.querySelector('#currentScore1');
 let currentPoints2 = document.querySelector('#currentScore2');
-let canvasElement = document.querySelector('#canvasElement');
 const rollButton = document.querySelector('#rollDiceButton');
 const holdButton = document.querySelector('#holdButton');
 const newGameButton = document.querySelector('#newgameButton');
