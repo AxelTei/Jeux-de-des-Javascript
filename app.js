@@ -1,4 +1,4 @@
-
+// Création des variables et récupération d'éléments html
 let actualScore;
 let actualPlayer;
 let newScores = [0, 0];
@@ -10,6 +10,7 @@ const rollButton = document.querySelector('#rollDiceButton');
 const holdButton = document.querySelector('#holdButton');
 const newGameButton = document.querySelector('#newgameButton');
 
+// Initialiser le jeu
 const startGame = () => 
 {
     actualScore = 0;
@@ -24,6 +25,7 @@ const startGame = () =>
 
 startGame();
 
+// Faire rouler le dés avec un nombre aléatoire
 const rollTheDice = () => 
 {
     let diceResult = Math.floor(Math.random() * 6) + 1;
@@ -37,6 +39,7 @@ const rollTheDice = () =>
     }
 }
 
+// Change le tour du joueur
 const changeTheRound = () => 
 {
     if (actualPlayer === 1) {
@@ -51,6 +54,7 @@ const changeTheRound = () =>
     currentPoints2.textContent = '0';
 }
 
+//Place le score actuel du joueur dans son score global
 const keepTheScore = () => 
 {
     if (gameIsActive === true) 
@@ -58,6 +62,7 @@ const keepTheScore = () =>
         newScores[actualPlayer - 1] += actualScore
         let newScore = document.getElementById(`globalPts${actualPlayer}`)
         newScore.textContent = newScores[actualPlayer - 1];
+        // Vérifie si la partie est gagné pour l'un des deux joueurs
         if(newScores[actualPlayer - 1] >= 100) {
             alert(`PLAYER${actualPlayer} Wins!`)
             startGame();
