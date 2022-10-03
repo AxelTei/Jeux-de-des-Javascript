@@ -22,10 +22,25 @@ body {
 
 @media screen and (max-width: 768px) {
     #canvasElement {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #canvasElement {
         width: 200px;
         height: 200px;
     }
 }
+
+@media screen and (min-width: 992px) {
+    #canvasElement {
+        width: 300px;
+        height: 300px;
+    }
+}
+
 
 #newgameBoard {
     padding: 48px;
@@ -35,4 +50,12 @@ body {
     background-color: black;
     height: 100vw;
 
+}
+
+#player1 h1 {
+    color: red;
+}
+
+#player2 h1 {
+    color: red;
 }
