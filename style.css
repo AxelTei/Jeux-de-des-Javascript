@@ -46,16 +46,58 @@ body {
     padding: 48px;
 }
 
-#footer {
-    background-color: black;
-    height: 100vw;
-
-}
-
 #player1 h1 {
     color: red;
 }
 
 #player2 h1 {
     color: red;
+}
+
+#globalPts1 {
+    color: red;
+    font-size: 3rem;
+}
+
+#globalPts2 {
+    color: red;
+    font-size: 3rem;
+}
+
+#player1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#player2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.current {
+    background-color: rgb(182, 31, 31);
+    width: 8rem;
+    height: 8rem;
+}
+
+.current2 {
+    background-color: rgb(182, 31, 31);
+    width: 8rem;
+    height: 8rem;
+}
+
+.current2 {
+
+}
+
+#currentScore1 {
+    font-size: 2rem;
+    color: white;
+}
+
+#currentScore2 {
+    font-size: 2rem;
+    color: white;
 }
