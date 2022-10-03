@@ -4,6 +4,7 @@ import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
 let reqAnim = true;
 const rollButton = document.querySelector('#rollDiceButton');
 const holdButton = document.querySelector('#holdButton');
+const newGameButton = document.querySelector('#newgameButton');
 let canvasElement = document.getElementById('canvasElement');
 let scene = new THREE.Scene();
 let camera = new THREE.PerspectiveCamera(70, canvasElement.width / canvasElement.height, 0.1, 1000);
@@ -57,7 +58,4 @@ const stopAnimate = () =>
 
 rollButton.addEventListener('click', animate)
 holdButton.addEventListener('click', stopAnimate)
-
-// Rendu de la scène
-//renderer.setClearColor('white');
-//renderer.render(scene, camera);
+newGameButton.addEventListener('click', stopAnimate)
