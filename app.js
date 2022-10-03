@@ -28,8 +28,6 @@ const rollTheDice = () =>
 {
     let diceResult = Math.floor(Math.random() * 6) + 1;
 
-    let diceStyleAnimation;
-
     if (diceResult !== 1) {
         actualScore += diceResult;
         let current = document.getElementById(`currentScore${actualPlayer}`);
